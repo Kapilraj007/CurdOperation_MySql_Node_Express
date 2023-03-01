@@ -1,0 +1,28 @@
+<div class="container">
+    <h2>Edit Client Details</h2>
+    <div class="col-6">
+      {{#if msg}}
+        <p class="text bg-primary">{{msg}}</p>
+      {{/if}}  
+
+      {{#each rows}}
+    <form method="post" action="/edituser/{{this.ID}}" autocomplete="false">
+  <div class="mb-3">
+    <label for="name"  class="form-label">Name</label>
+<input type="name" name="name" class="form-control" value="{{this.NAME}}">
+  </div>
+  <div class="mb-3">
+    <label for="age" class="form-label">Age</label>
+    <input type="name" name="age" class="form-control" value="{{this.AGE}}">
+  </div>
+  <div class="mb-3">
+    <label for="city" class="form-label">City</label>
+    <input type="name" name="city" class="form-control" value="{{this.CITY}}">
+  </div>
+ 
+  <button type="submit" class="btn btn-primary">Update Details</button>
+<a class="btn btn-warning" href="/">view all</a>
+
+</form>
+{{/each}}
+</div>

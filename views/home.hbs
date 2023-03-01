@@ -1,0 +1,31 @@
+
+<div class="container">
+    <h2>Student Management Table</h2>
+    <hr>
+   <a class="btn btn-warning" href="/adduser">Add user</a>
+    <br>
+    <div class="table-responsive pt-4">
+        <table class="table table-striped table-bordered">
+            <tr>
+            <th>SNo</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Edit</th>
+            <th>City</th>
+            <th>Delete</th>
+            </tr>
+            <tbody>
+            {{#each rows}}
+            <tr>
+                <td>{{this.ID}}</td>
+                <td>{{this.NAME}}</td>
+                <td>{{this.AGE}}</td>
+                <td>{{this.CITY}}</td>
+                <td><a class="btn btn-info" href="/edituser/{{this.ID}}">Edit</a></td>
+                <td><a onclick="return confirm('Are you sure')" class="btn btn-danger" href="/deleteuser/{{this.ID}}">Delete</a></td>
+            </tr>
+            {{/each}}
+            </tbody>
+        </table>
+    </div>
+</div>
